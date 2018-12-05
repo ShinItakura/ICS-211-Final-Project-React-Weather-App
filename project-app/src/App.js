@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from './components/Title';
 import GetWeather from './components/GetWeather';
+import GetForecast from './components/GetForcast';
 
 class App extends React.Component{
 
@@ -9,6 +10,7 @@ class App extends React.Component{
       <div>
         <Title />
         <GetWeather />
+        <GetForecast />
       </div>
     )
   }
