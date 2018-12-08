@@ -8,44 +8,36 @@ const Forecast = (props) => {
             <table>
                 <th></th>
                 <tr>
-                    <td>{props.temperature0 && <p>Temperature Tonight:      {props.temperature0}</p>}</td>
-                    <td>{props.temperature1 && <p>Temperature Tomorrow:     {props.temperature1}</p>}</td>
-                    <td>{props.temperature2 && <p>Temperature In Two Days:  {props.temperature2}</p>}</td>
-                    <td>{props.temperature3 && <p>Temperature In Three Days:{props.temperature3}</p>}</td>
-                    <td>{props.temperature4 && <p>Temperature In Four Days: {props.temperature4}</p>}</td>
-                    <td>{props.temperature5 && <p>Temperature In Five Days: {props.temperature5}</p>}</td>
+                    <td>{props.temperature0 && <p><b>Temperature later:</b><br/>{props.temperature0}</p>}</td>
+                    <td>{props.temperature1 && <p><b>Temperature Tomorrow:</b><br/>{props.temperature1}</p>}</td>
+                    <td>{props.temperature2 && <p><b>Temperature In 2 Days:</b><br/>{props.temperature2}</p>}</td>
+                    <td>{props.temperature3 && <p><b>Temperature In 3 Days:</b><br/>{props.temperature3}</p>}</td>
+                    <td>{props.temperature4 && <p><b>Temperature In 4 Days:</b><br/>{props.temperature4}</p>}</td>
+                    <td>{props.temperature5 && <p><b>Temperature In 5 Days:</b><br/>{props.temperature5}</p>}</td>
                 </tr>
                 <tr>
-                    <td>{props.min_temp0 && <p>Minimum Temperature: {props.min_temp0}</p>}</td>
-                    <td>{props.min_temp1 && <p>Minimum Temperature: {props.min_temp1}</p>}</td>
-                    <td>{props.min_temp2 && <p>Minimum Temperature: {props.min_temp2}</p>}</td>
-                    <td>{props.min_temp3 && <p>Minimum Temperature: {props.min_temp3}</p>}</td>
-                    <td>{props.min_temp4 && <p>Minimum Temperature: {props.min_temp4}</p>}</td>
-                    <td>{props.min_temp5 && <p>Minimum Temperature: {props.min_temp5}</p>}</td>
+                    <td>{props.min_temp0 && <p><b>Min Temp:</b> {props.min_temp0}</p>}</td>
+                    <td>{props.min_temp1 && <p><b>Min Temp:</b> {props.min_temp1}</p>}</td>
+                    <td>{props.min_temp2 && <p><b>Min Temp:</b> {props.min_temp2}</p>}</td>
+                    <td>{props.min_temp3 && <p><b>Min Temp:</b> {props.min_temp3}</p>}</td>
+                    <td>{props.min_temp4 && <p><b>Min Temp:</b> {props.min_temp4}</p>}</td>
+                    <td>{props.min_temp5 && <p><b>Min Temp:</b> {props.min_temp5}</p>}</td>
                 </tr>
                 <tr>
-                    <td>{props.max_temp0 && <p>Maximum Temperature: {props.max_temp0}</p>}</td>
-                    <td>{props.max_temp1 && <p>Maximum Temperature: {props.max_temp1}</p>}</td>
-                    <td>{props.max_temp2 && <p>Maximum Temperature: {props.max_temp2}</p>}</td>
-                    <td>{props.max_temp3 && <p>Maximum Temperature: {props.max_temp3}</p>}</td>
-                    <td>{props.max_temp4 && <p>Maximum Temperature: {props.max_temp4}</p>}</td>
-                    <td>{props.max_temp5 && <p>Maximum Temperature: {props.max_temp5}</p>}</td>
+                    <td>{props.max_temp0 && <p><b>Max Temp:</b> {props.max_temp0}</p>}</td>
+                    <td>{props.max_temp1 && <p><b>Max Temp:</b> {props.max_temp1}</p>}</td>
+                    <td>{props.max_temp2 && <p><b>Max Temp:</b> {props.max_temp2}</p>}</td>
+                    <td>{props.max_temp3 && <p><b>Max Temp:</b> {props.max_temp3}</p>}</td>
+                    <td>{props.max_temp4 && <p><b>Max Temp:</b> {props.max_temp4}</p>}</td>
+                    <td>{props.max_temp5 && <p><b>Max Temp:</b> {props.max_temp5}</p>}</td>
                 </tr>
                 <tr>
-                    <td>{props.description0 && <p>Conditions:   {props.description0}</p>} </td>
-                    <td>{props.description1 && <p>Conditions:   {props.description1}</p>} </td>
-                    <td>{props.description2 && <p>Conditions:   {props.description2}</p>} </td>
-                    <td>{props.description3 && <p>Conditions:   {props.description3}</p>} </td>
-                    <td>{props.description4 && <p>Conditions:   {props.description4}</p>} </td>
-                    <td>{props.description5 && <p>Conditions:   {props.description5}</p>} </td>
-                </tr>
-                <tr>
-                    <td>{props.time0 && <p>DateTime:    {props.time0}</p>}</td>
-                    <td>{props.time1 && <p>DateTime:    {props.time1}</p>}</td>
-                    <td>{props.time2 && <p>DateTime:    {props.time2}</p>}</td>
-                    <td>{props.time3 && <p>DateTime:    {props.time3}</p>}</td>
-                    <td>{props.time4 && <p>DateTime:    {props.time4}</p>}</td>
-                    <td>{props.time5 && <p>DateTime:    {props.time5}</p>}</td>
+                    <td>{props.time0 && <p><b>Approximate Date Time:</b><br/>{props.time0}</p>}</td>
+                    <td>{props.description1 && <p><b>Conditions:</b><br/>{props.description1}</p>} </td>
+                    <td>{props.description2 && <p><b>Conditions:</b><br/>{props.description2}</p>} </td>
+                    <td>{props.description3 && <p><b>Conditions:</b><br/>{props.description3}</p>} </td>
+                    <td>{props.description4 && <p><b>Conditions:</b><br/>{props.description4}</p>} </td>
+                    <td>{props.description5 && <p><b>Conditions:</b><br/>{props.description5}</p>} </td>
                 </tr>
                 {props.error && <p>{props.error}</p>}  
             </table> 

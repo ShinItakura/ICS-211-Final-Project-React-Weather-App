@@ -10,33 +10,32 @@ class GetForecast extends React.Component {
         temperature0: undefined,
         min_temp0: undefined,
         max_temp0: undefined,
-        description0: undefined,
         time0: undefined,
+
         temperature1: undefined,
         min_temp1: undefined,
         max_temp1: undefined,
         description1: undefined,
-        time1: undefined,
+
         temperature2: undefined,
         min_temp2: undefined,
         max_temp2: undefined,
         description2: undefined,
-        time2: undefined,
+
         temperature3: undefined,
         min_temp3: undefined,
         max_temp3: undefined,
         description3: undefined,
-        time3: undefined,
+
         temperature4: undefined,
         min_temp4: undefined,
         max_temp4: undefined,
         description4: undefined,
-        time4: undefined,
+
         temperature5: undefined,
         min_temp5: undefined,
         max_temp5: undefined,
         description5: undefined,
-        time5: undefined,
         error: undefined
     }
     getForecast = async (e) => {
@@ -45,10 +44,11 @@ class GetForecast extends React.Component {
         const forecast_city = 'Victoria';
         const forecast_country = 'CA';
         const domain = forecast_city + ',' + forecast_country;
+        const celcius = "metric";
         e.preventDefault();
 
         //const forecast_api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${city_id}&appid=${Forecast_Api_Key}`);
-        const forecast_api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${domain}&appid=${Forecast_Api_Key}`);
+        const forecast_api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${domain}&units=${celcius}&appid=${Forecast_Api_Key}`);
         const forecast_response = await forecast_api_call.json();
         console.log(forecast_response);
     
@@ -61,31 +61,32 @@ class GetForecast extends React.Component {
                 max_temp0: forecast_response.list[0].main.temp_max,
                 description: forecast_response.list[0].weather[0].description,
                 time0: forecast_response.list[0].dt_txt,
+
                 temperature1: forecast_response.list[3].main.temp,
                 min_temp1: forecast_response.list[3].main.temp_min,
                 max_temp1: forecast_response.list[3].main.temp_max,
                 description1: forecast_response.list[3].weather[0].description,
-                time1: forecast_response.list[3].dt_txt,
+                
                 temperature2: forecast_response.list[11].main.temp,
                 min_temp2: forecast_response.list[11].main.temp_min,
                 max_temp2: forecast_response.list[11].main.temp_max,
                 description2: forecast_response.list[11].weather[0].description,
-                time2: forecast_response.list[11].dt_txt,
+                
                 temperature3: forecast_response.list[19].main.temp,
                 min_temp3: forecast_response.list[19].main.temp_min,
                 max_temp3: forecast_response.list[19].main.temp_max,
                 description3: forecast_response.list[19].weather[0].description,
-                time3: forecast_response.list[19].dt_txt,
+                
                 temperature4: forecast_response.list[27].main.temp,
                 min_temp4: forecast_response.list[27].main.temp_min,
                 max_temp4: forecast_response.list[27].main.temp_max,
                 description4: forecast_response.list[27].weather[0].description,
-                time4: forecast_response.list[27].dt_txt,
+                
                 temperature5: forecast_response.list[35].main.temp,
                 min_temp5: forecast_response.list[35].main.temp_min,
                 max_temp5: forecast_response.list[35].main.temp_max,
                 description5: forecast_response.list[35].weather[0].description,
-                time5: forecast_response.list[35].dt_txt,
+                
                 error: ""
             })
         }else{
