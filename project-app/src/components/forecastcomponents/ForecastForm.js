@@ -3,7 +3,8 @@ import React from 'react';
 const ForecastForm = (props) => {
 
     return (
-        <form onSubmit={props.loadWeather}>
+        /*
+        <form onSubmit={props.loadForecast}>
             <p>Get Your Weather Forecast</p>
             <select>
                 <option>Select A Location For Your Forecast</option>
@@ -34,6 +35,23 @@ const ForecastForm = (props) => {
                 <option value="2253350">Dakar, Senegal</option>
             </select>
             <button>Get Forecast</button>
+        </form>
+        */
+        
+        //<form onSubmit={props.loadForcast}>
+        //    <input type="submit">
+        //</form>
+        
+        /*
+        <form onSubmit={props.loadForecast}>
+            <input type="text" name="city" placeholder="Which City ?" />
+            <input type="text" name="country" placeholder="What Country CA, US etc.?" />
+            <button>Search</button>
+        </form>
+        */
+        <form onSubmit={props.loadForecast}>
+            <p>Your Five Day Forcast In Victoria BC</p>
+            <button value="5_day_forecast">Click here to get your 5 Day Forecast</button>
         </form>
     )
 }
