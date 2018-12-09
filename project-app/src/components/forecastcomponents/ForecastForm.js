@@ -1,4 +1,5 @@
 import React from 'react';
+import ForcastStyles from './ForecastStyles.css';
 
 const ForecastForm = (props) => {
 
@@ -49,7 +50,7 @@ const ForecastForm = (props) => {
             <button>Search</button>
         </form>
         */
-        <form onSubmit={props.loadForecast}>
+        <form className="component-forecast-form" onSubmit={props.loadForecast}>
             <p>Your Five Day Forcast In Victoria BC</p>
             <button value="5_day_forecast">Click here to get your 5 Day Forecast</button>
         </form>

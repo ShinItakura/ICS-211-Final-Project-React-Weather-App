@@ -1,11 +1,12 @@
 import React from 'react';
+import ForcastStyles from './ForecastStyles.css';
 
 const Forecast = (props) => {
     
     return(
         
-        <div>
-            <table>
+        <div className="component-forecast-app"> 
+            <table className="component-forecast-app-table">
                 <th></th>
                 <tr>
                     <td>{props.temperature0 && <p><b>Temperature later:</b><br/>{props.temperature0}</p>}</td>
