@@ -15,7 +15,7 @@ const Weather = (props) => {
                     {props.wind && <tr><td>Wind:</td><td>{props.wind}</td></tr>}
                     {props.degrees && <tr><td>Degrees:</td><td>{props.degrees}</td></tr>}
                     {props.description && <tr><td>Conditions:</td><td>{props.description}</td></tr>}
-                    {props.error && <tr><td>{props.error}</td></tr>}
+                    {props.error && <tr><td><b>{props.error}</b></td></tr>}
                 </table>
             </form>  
         </div>

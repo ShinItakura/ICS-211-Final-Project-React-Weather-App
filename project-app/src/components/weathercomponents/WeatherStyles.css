@@ -1,21 +1,22 @@
 .component-weather-form {
     background-color: #858694;
     color: white;
-    text-align: right;
+    text-align: center;
     font-weight: 200;
     flex: 0 0 auto;
     width: 100%;
     padding-top: 20px;
+    align-content: center;
 }
 .component-weather-app {
     background-color: #858694;
     box-align: center;
 }
 .component-weather-app-table {
-    box-align: center;
+    align-content: center;
     background-color: #858694;
     color: white;
-    text-align: justify;
+    text-align: center;
     font-weight: 200;
     flex: 0 0 auto;
     width: 100%;
@@ -25,8 +26,8 @@
     padding-bottom: 20px;
 }
 .component-weather-app-table tr{
-    background-color: #858694;    
+    background-color: rgb(51, 51, 51);    
 }
 .component-weather-app-table tr:hover{
-    background-color: rgb(80, 81, 190);
+    background-color: rgb(35, 211, 211);
 }

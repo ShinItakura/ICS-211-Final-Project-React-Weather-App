@@ -20,6 +20,8 @@ const Form = (props) => {
                 </label>
             </div> */}
             <button>Search</button>
+            <br/>
+            <br/>
         </form>
     )
 }
