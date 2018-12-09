@@ -1,18 +1,23 @@
 import React from 'react';
+import WeatherStyles from './WeatherStyles.css';
 
 const Weather = (props) => {
 
     return(
-        <div>  
-            {props.country && props.city && <p>Location:{props.city},{props.country}</p>}
-            {props.temperature && <p>Temperature:{props.temperature}</p>}
-            {props.min_temp && <p>Minimum Temperature:{props.min_temp}</p>}
-            {props.max_temp && <p>Maximum Temperature:{props.max_temp}</p>}
-            {props.humidity && <p>Humidity:{props.humidity}</p>}
-            {props.wind && <p>Wind:{props.wind}</p>}
-            {props.degrees && <p>Degrees: {props.degrees}</p>}
-            {props.description && <p>Conditions:{props.description}</p>}
-            {props.error && <p>{props.error}</p>}
+        <div className="component-weather-app">
+            <form>
+                <table className="component-weather-app-table">
+                    {props.country && props.city && <tr><td>Location</td><td>{props.city}, {props.country}</td></tr>}
+                    {props.temperature && <tr><td>Temperature:</td><td>{props.temperature}</td></tr>}
+                    {props.min_temp && <tr><td>Minimum Temperature:</td><td>{props.min_temp}</td></tr>}
+                    {props.max_temp && <tr><td>Maximum Temperature:</td><td>{props.max_temp}</td></tr>}
+                    {props.humidity && <tr><td>Humidity:</td><td>{props.humidity}</td></tr>}
+                    {props.wind && <tr><td>Wind:</td><td>{props.wind}</td></tr>}
+                    {props.degrees && <tr><td>Degrees:</td><td>{props.degrees}</td></tr>}
+                    {props.description && <tr><td>Conditions:</td><td>{props.description}</td></tr>}
+                    {props.error && <tr><td>{props.error}</td></tr>}
+                </table>
+            </form>  
         </div>
     )
 }
