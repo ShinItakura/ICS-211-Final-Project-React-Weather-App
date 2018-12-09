@@ -1,0 +1,45 @@
+#
+# ICS 211 Final Project Gitlab CI FILE
+# ----------------------
+# Purpose: This activates the GitLab CI Pipeline.
+# Author: Jason Cumiskey, Nov. 2018
+#
+# Deploy Stage:
+# -------------
+# It pushes the GitLab master branch of your project to Dokku.
+# Dokku will then build and deploys it.
+#
+# ********* REQUIREMENTS FOR USING THIS *********************
+# Note to Instructor: SSH_PRIVATE_KEY var must be set 
+# in GitLab for the group this project is in.
+# This assumes the repo is an app made with Create React App
+# ***********************************************************
+variables:
+  # hostname of the DOKKU deployment server
+  DEPLOY_SRV: deploy.cs.camosun.bc.ca
+
+before_script:
+  # --- SSH Settings to communicate with Dokku: DON'T MESS WITH THIS! ---
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+stages:
+  - deploy
+
+deploy_app_to_dokku:
+  stage: deploy
+  environment: production
+  tags:
+    # use a deploy runner
+    - deploy
+  script:
+    - 'ssh dokku@$DEPLOY_SRV apps:create $CI_PROJECT_NAME || true'
+    - ssh dokku@$DEPLOY_SRV config:set $CI_PROJECT_NAME BUILDPACK_URL=https://github.com/mars/create-react-app-buildpack.git
+    # push the app to the deploy server
+    - git push dokku@$DEPLOY_SRV:$CI_PROJECT_NAME master
+  only:
+    # should only be pushing the master branch
+    - master
