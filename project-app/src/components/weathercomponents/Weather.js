@@ -3,7 +3,7 @@ import WeatherStyles from './WeatherStyles.css';
 
 const Weather = (props) => {
 
-    return(
+    return (
         <div className="component-weather-app">
             <form>
                 <table className="component-weather-app-table">
@@ -17,7 +17,7 @@ const Weather = (props) => {
                     {props.description && <tr><td>Conditions:</td><td>{props.description}</td></tr>}
                     {props.error && <tr><td><b>{props.error}</b></td></tr>}
                 </table>
-            </form>  
+            </form>
         </div>
     )
 }

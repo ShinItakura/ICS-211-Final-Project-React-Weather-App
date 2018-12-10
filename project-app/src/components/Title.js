@@ -1,7 +1,7 @@
 import React from 'react';
 import TitleFooter from './TitleFooter.css';
 
-const Title = (props) =>{
+const Title = (props) => {
   return (
     <div className="title">
       <h1>Final Project </h1>

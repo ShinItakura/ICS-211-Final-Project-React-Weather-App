@@ -39,7 +39,7 @@ class GetForecast extends React.Component {
         error: undefined
     }
     getForecast = async (e) => {
-    
+
         //const city_id = e.target.elements.city_id.value;
         const forecast_city = 'Victoria';
         const forecast_country = 'CA';
@@ -51,10 +51,10 @@ class GetForecast extends React.Component {
         const forecast_api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${domain}&units=${celcius}&appid=${Forecast_Api_Key}`);
         const forecast_response = await forecast_api_call.json();
         console.log(forecast_response);
-    
+
         //if(city_id){
         //if(zipcode){
-        if(forecast_city && forecast_country){
+        if (forecast_city && forecast_country) {
             this.setState({
                 temperature0: forecast_response.list[0].main.temp,
                 min_temp0: forecast_response.list[0].main.temp_min,
@@ -66,77 +66,77 @@ class GetForecast extends React.Component {
                 min_temp1: forecast_response.list[3].main.temp_min,
                 max_temp1: forecast_response.list[3].main.temp_max,
                 description1: forecast_response.list[3].weather[0].description,
-                
+
                 temperature2: forecast_response.list[11].main.temp,
                 min_temp2: forecast_response.list[11].main.temp_min,
                 max_temp2: forecast_response.list[11].main.temp_max,
                 description2: forecast_response.list[11].weather[0].description,
-                
+
                 temperature3: forecast_response.list[19].main.temp,
                 min_temp3: forecast_response.list[19].main.temp_min,
                 max_temp3: forecast_response.list[19].main.temp_max,
                 description3: forecast_response.list[19].weather[0].description,
-                
+
                 temperature4: forecast_response.list[27].main.temp,
                 min_temp4: forecast_response.list[27].main.temp_min,
                 max_temp4: forecast_response.list[27].main.temp_max,
                 description4: forecast_response.list[27].weather[0].description,
-                
+
                 temperature5: forecast_response.list[35].main.temp,
                 min_temp5: forecast_response.list[35].main.temp_min,
                 max_temp5: forecast_response.list[35].main.temp_max,
                 description5: forecast_response.list[35].weather[0].description,
-                
+
                 error: ""
             })
-        }else{
+        } else {
             this.setState({
                 error: "Please Choose A Valid Location From The Drop Down Menu"
             })
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <ForecastForm loadForecast={this.getForecast}/>
-                <Forecast 
-                temperature0={this.state.temperature0} 
-                min_temp0={this.state.min_temp0} 
-                max_temp0={this.state.max_temp0} 
-                description0={this.state.description0} 
-                time0={this.state.time0}
+                <ForecastForm loadForecast={this.getForecast} />
+                <Forecast
+                    temperature0={this.state.temperature0}
+                    min_temp0={this.state.min_temp0}
+                    max_temp0={this.state.max_temp0}
+                    description0={this.state.description0}
+                    time0={this.state.time0}
 
-                temperature1={this.state.temperature1} 
-                min_temp1={this.state.min_temp1} 
-                max_temp1={this.state.max_temp1} 
-                description1={this.state.description1} 
-                time1={this.state.time1}
+                    temperature1={this.state.temperature1}
+                    min_temp1={this.state.min_temp1}
+                    max_temp1={this.state.max_temp1}
+                    description1={this.state.description1}
+                    time1={this.state.time1}
 
-                temperature2={this.state.temperature2}
-                min_temp2={this.state.min_temp2}
-                max_temp2={this.state.max_temp2}
-                description2={this.state.description2}
-                time2={this.state.time2} 
+                    temperature2={this.state.temperature2}
+                    min_temp2={this.state.min_temp2}
+                    max_temp2={this.state.max_temp2}
+                    description2={this.state.description2}
+                    time2={this.state.time2}
 
-                temperature3={this.state.temperature3} 
-                min_temp3={this.state.min_temp3} 
-                max_temp3={this.state.max_temp3} 
-                description3={this.state.description3} 
-                time3={this.state.time3}
+                    temperature3={this.state.temperature3}
+                    min_temp3={this.state.min_temp3}
+                    max_temp3={this.state.max_temp3}
+                    description3={this.state.description3}
+                    time3={this.state.time3}
 
-                temperature4={this.state.temperature4}
-                min_temp4={this.state.min_temp4}
-                max_temp4={this.state.max_temp4}
-                description4={this.state.description4}
-                time4={this.state.time4}
+                    temperature4={this.state.temperature4}
+                    min_temp4={this.state.min_temp4}
+                    max_temp4={this.state.max_temp4}
+                    description4={this.state.description4}
+                    time4={this.state.time4}
 
-                temperature5={this.state.temperature5} 
-                min_temp5={this.state.min_temp5} 
-                max_temp5={this.state.max_temp5} 
-                description5={this.state.description5} 
-                time5={this.state.time5}
+                    temperature5={this.state.temperature5}
+                    min_temp5={this.state.min_temp5}
+                    max_temp5={this.state.max_temp5}
+                    description5={this.state.description5}
+                    time5={this.state.time5}
 
-                error={this.state.error}
+                    error={this.state.error}
                 />
             </div>
         )

@@ -18,9 +18,9 @@ class GetWeather extends React.Component {
         description: undefined,
         error: undefined
     }
-    
+
     getWeather = async (e) => {
-    
+
         const city = e.target.elements.city.value;
         const country = e.target.elements.country.value;
         const celcius = "metric";
@@ -30,8 +30,8 @@ class GetWeather extends React.Component {
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=${celcius}&appid=${Api_Key}`);
         const response = await api_call.json();
         console.log(response);
-    
-        if(city && country){
+
+        if (city && country) {
             this.setState({
                 temperature: response.main.temp,
                 min_temp: response.main.temp_min,
@@ -44,19 +44,19 @@ class GetWeather extends React.Component {
                 description: response.weather[0].description,
                 error: ""
             })
-        }else{
+        } else {
             this.setState({
                 error: "You have not filled in the form, please fill the form"
             })
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <Form loadWeather={this.getWeather}/>
-                <Weather temperature={this.state.temperature} min_temp={this.state.min_temp} max_temp={this.state.max_temp} 
-                city={this.state.city} country={this.state.country} humidity={this.state.humidity} wind={this.state.wind} 
-                degrees= {this.state.degrees} description={this.state.description} error={this.state.error}/>
+                <Form loadWeather={this.getWeather} />
+                <Weather temperature={this.state.temperature} min_temp={this.state.min_temp} max_temp={this.state.max_temp}
+                    city={this.state.city} country={this.state.country} humidity={this.state.humidity} wind={this.state.wind}
+                    degrees={this.state.degrees} description={this.state.description} error={this.state.error} />
             </div>
         )
     }

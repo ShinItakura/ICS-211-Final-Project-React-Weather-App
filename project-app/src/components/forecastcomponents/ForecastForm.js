@@ -38,11 +38,11 @@ const ForecastForm = (props) => {
             <button>Get Forecast</button>
         </form>
         */
-        
+
         //<form onSubmit={props.loadForcast}>
         //    <input type="submit">
         //</form>
-        
+
         /*
         <form onSubmit={props.loadForecast}>
             <input type="text" name="city" placeholder="Which City ?" />
