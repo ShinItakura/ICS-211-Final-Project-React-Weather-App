@@ -25,12 +25,15 @@
     padding-right: 10%;
     padding-bottom: 20px;
 }
-.component-forecast-app-table tr{
+.component-forecast-app-table td,tr{
     background-color: #858694;
     color: white;
     text-align: center;
     font-weight: 200;
 }
-.component-forecast-app-table tr:hover{
+.component-forecast-app-table td:nth-child(even) {
+    background-color: rgb(75, 75, 75);
+}
+.component-forecast-app-table td:hover{
     background-color: rgb(35, 211, 211);
 }
